@@ -1,0 +1,15 @@
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.XMLService\obj\Debug\NeuralNetwork.XMLService.csprojResolveAssemblyReference.cache
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.XMLService\obj\Debug\NeuralNetwork.XMLService.csproj.CoreCompileInputs.cache
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.XMLService\bin\Debug\NeuralNetwork.XMLService.dll
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.XMLService\bin\Debug\NeuralNetwork.XMLService.pdb
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.XMLService\bin\Debug\LinearAlgebra.dll
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.XMLService\bin\Debug\NeuralNetwork.CommonComponents.dll
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.XMLService\bin\Debug\NeuralNetwork.DataSet.dll
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.XMLService\bin\Debug\NeuralNetwork.Network.dll
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.XMLService\bin\Debug\NeuralNetwork.DataSet.pdb
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.XMLService\bin\Debug\LinearAlgebra.pdb
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.XMLService\bin\Debug\NeuralNetwork.CommonComponents.pdb
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.XMLService\bin\Debug\NeuralNetwork.Network.pdb
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.XMLService\bin\Debug\NeuralNetwork.Network.dll.config
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.XMLService\obj\Debug\NeuralNetwork.XMLService.dll
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.XMLService\obj\Debug\NeuralNetwork.XMLService.pdb

@@ -1,0 +1,10 @@
+C:\Users\Bruker\Desktop\BachelorAssignment\NeuralNetwork\NeuralNetwork\LinearAlgebra\bin\Debug\LinearAlgebra.dll
+C:\Users\Bruker\Desktop\BachelorAssignment\NeuralNetwork\NeuralNetwork\LinearAlgebra\bin\Debug\LinearAlgebra.pdb
+C:\Users\Bruker\Desktop\BachelorAssignment\NeuralNetwork\NeuralNetwork\LinearAlgebra\obj\Debug\LinearAlgebra.dll
+C:\Users\Bruker\Desktop\BachelorAssignment\NeuralNetwork\NeuralNetwork\LinearAlgebra\obj\Debug\LinearAlgebra.pdb
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\LinearAlgebra\bin\Debug\LinearAlgebra.dll
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\LinearAlgebra\bin\Debug\LinearAlgebra.pdb
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\LinearAlgebra\obj\Debug\LinearAlgebra.csprojResolveAssemblyReference.cache
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\LinearAlgebra\obj\Debug\LinearAlgebra.csproj.CoreCompileInputs.cache
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\LinearAlgebra\obj\Debug\LinearAlgebra.dll
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\LinearAlgebra\obj\Debug\LinearAlgebra.pdb

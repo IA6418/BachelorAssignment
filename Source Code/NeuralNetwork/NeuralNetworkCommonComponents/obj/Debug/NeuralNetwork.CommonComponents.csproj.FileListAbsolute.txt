@@ -1,0 +1,10 @@
+C:\Users\Bruker\Desktop\BachelorAssignment\NeuralNetwork\NeuralNetwork\NeuralNetworkCommonComponents\bin\Debug\NeuralNetwork.CommonComponents.dll
+C:\Users\Bruker\Desktop\BachelorAssignment\NeuralNetwork\NeuralNetwork\NeuralNetworkCommonComponents\bin\Debug\NeuralNetwork.CommonComponents.pdb
+C:\Users\Bruker\Desktop\BachelorAssignment\NeuralNetwork\NeuralNetwork\NeuralNetworkCommonComponents\obj\Debug\NeuralNetwork.CommonComponents.dll
+C:\Users\Bruker\Desktop\BachelorAssignment\NeuralNetwork\NeuralNetwork\NeuralNetworkCommonComponents\obj\Debug\NeuralNetwork.CommonComponents.pdb
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetworkCommonComponents\bin\Debug\NeuralNetwork.CommonComponents.dll
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetworkCommonComponents\bin\Debug\NeuralNetwork.CommonComponents.pdb
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetworkCommonComponents\obj\Debug\NeuralNetwork.CommonComponents.csprojResolveAssemblyReference.cache
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetworkCommonComponents\obj\Debug\NeuralNetwork.CommonComponents.csproj.CoreCompileInputs.cache
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetworkCommonComponents\obj\Debug\NeuralNetwork.CommonComponents.dll
+C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetworkCommonComponents\obj\Debug\NeuralNetwork.CommonComponents.pdb

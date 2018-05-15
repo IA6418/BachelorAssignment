@@ -6,3 +6,10 @@ C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.DataSet\
 C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.DataSet\obj\Debug\NeuralNetwork.DataSet.csproj.CoreCompileInputs.cache
 C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.DataSet\obj\Debug\NeuralNetwork.DataSet.dll
 C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetwork.DataSet\obj\Debug\NeuralNetwork.DataSet.pdb
+C:\Users\Bruker\Desktop\BachelorAssignment\Source Code\NeuralNetwork\NeuralNetwork.DataSet\bin\Debug\NeuralNetwork.DataSet.dll
+C:\Users\Bruker\Desktop\BachelorAssignment\Source Code\NeuralNetwork\NeuralNetwork.DataSet\bin\Debug\NeuralNetwork.DataSet.pdb
+C:\Users\Bruker\Desktop\BachelorAssignment\Source Code\NeuralNetwork\NeuralNetwork.DataSet\bin\Debug\NeuralNetwork.CommonComponents.dll
+C:\Users\Bruker\Desktop\BachelorAssignment\Source Code\NeuralNetwork\NeuralNetwork.DataSet\bin\Debug\NeuralNetwork.CommonComponents.pdb
+C:\Users\Bruker\Desktop\BachelorAssignment\Source Code\NeuralNetwork\NeuralNetwork.DataSet\obj\Debug\NeuralNetwork.DataSet.csprojResolveAssemblyReference.cache
+C:\Users\Bruker\Desktop\BachelorAssignment\Source Code\NeuralNetwork\NeuralNetwork.DataSet\obj\Debug\NeuralNetwork.DataSet.dll
+C:\Users\Bruker\Desktop\BachelorAssignment\Source Code\NeuralNetwork\NeuralNetwork.DataSet\obj\Debug\NeuralNetwork.DataSet.pdb

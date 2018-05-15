@@ -75,6 +75,16 @@ namespace NeuralNetwork.Core.OptimizationStrategies
             get { return _costFunction; }
             set { _costFunction = value; }
         }
+        public IRegularizationStrategyFactory RegularizationStrategyFactory
+        {
+            get { return _regularizationStrategyFactory; }
+            set { _regularizationStrategyFactory = value; }
+        }
+        public RegularizationType RegularizationType
+        {
+            get { return _regularizationType; }
+            set { _regularizationType = value; }
+        }
 
 
         public double Backpropagate(FeedForwardData feedForwardData, double[] targetOutputs, TrainingParameters trainingParams, int timeStep) //public double Backpropagate(FeedForwardData feedForwardData, double[] targetOutputs, TrainingParameters trainingParams)

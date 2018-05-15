@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using NeuralNetwork.CommonComponents.Interfaces;
 using NeuralNetwork.CommonComponents.Structs;
+using NeuralNetwork.CommonComponents.Enums;
 using LinearAlgebra;
 using NeuralNetwork.Network;
 
@@ -14,9 +15,9 @@ namespace NeuralNetwork.XMLService
     public class XML
     {
 
-        private XmlDocument _xmlDoc;// = new XmlDocument();
+        private XmlDocument _xmlDoc;
 
-        static INetwork _network;
+        static INetwork network;
 
         static string _filepath;
 
@@ -24,7 +25,7 @@ namespace NeuralNetwork.XMLService
         public void SaveNetwork(string dataSetFileLocation, INetwork network)
         {
 
-            XmlWriter writer = XmlWriter.Create(_network.SavePath.ToString() + "/NeuralNetwork.xml");
+            XmlWriter writer = XmlWriter.Create(network.SavePath.ToString() + "/NeuralNetwork.xml");
 
             writer.WriteStartElement("NeuralNetwork"); //doc start
 
@@ -42,7 +43,7 @@ namespace NeuralNetwork.XMLService
 
             writer.WriteStartElement("DistributionType");
 
-            writer.WriteElementString("InitialRandomDistributionType", _network.RandomDistribution.ToString());
+            writer.WriteElementString("InitialRandomDistributionType", network.RandomDistribution.ToString());
 
             writer.WriteEndElement();
 
@@ -66,11 +67,11 @@ namespace NeuralNetwork.XMLService
 
             writer.WriteStartElement("LayerStructure");
 
-            writer.WriteElementString("NumberOfInputNeurons", _network.LayerStructure.numberOfInputNodes.ToString());
+            writer.WriteElementString("NumberOfInputNeurons", network.LayerStructure.numberOfInputNodes.ToString());
 
-            writer.WriteElementString("NumberOfOutputNeurons", _network.LayerStructure.numberOfOutputNodes.ToString());
+            writer.WriteElementString("NumberOfOutputNeurons", network.LayerStructure.numberOfOutputNodes.ToString());
 
-            writer.WriteElementString("NumberOfHiddenLayers", _network.LayerStructure.HiddenLayerList.Count.ToString());
+            writer.WriteElementString("NumberOfHiddenLayers", network.LayerStructure.HiddenLayerList.Count.ToString());
 
             for (int i = 0; i < network.LayerStructure.HiddenLayerList.Count; i++)
             {
@@ -85,13 +86,17 @@ namespace NeuralNetwork.XMLService
 
             writer.WriteStartElement("Strategy");
 
-            writer.WriteElementString("OptimizationStrategy", _network.Strategy.ToString());
+            writer.WriteElementString("OptimizationStrategy", network.Strategy.ToString());
 
-            writer.WriteElementString("HiddenLayerActivationFunction", _network.Strategy.HiddenActivationFunction.ToString());
+            writer.WriteElementString("HiddenLayerActivationFunction", network.Strategy.HiddenActivationFunction.ToString());
 
-            writer.WriteElementString("OutputLayerActivationFunction", _network.Strategy.OutputActivationFunction.ToString());
+            writer.WriteElementString("OutputLayerActivationFunction", network.Strategy.OutputActivationFunction.ToString());
 
-            writer.WriteElementString("CostFunction", _network.Strategy.CostFunction.ToString());
+            writer.WriteElementString("CostFunction", network.Strategy.CostFunction.ToString());
+
+            writer.WriteElementString("RegularizationType", network.Strategy.RegularizationType.ToString());  
+
+            writer.WriteElementString("RegularizationStrategyFactory", network.Strategy.RegularizationStrategyFactory.ToString());  
 
             writer.WriteEndElement();
 
@@ -191,7 +196,6 @@ namespace NeuralNetwork.XMLService
         public INetwork LoadNetwork(string xmlFilePath, IDataSet dataset)
         {
 
-            //XmlDocument _xmlDoc = new XmlDocument();
              _xmlDoc = new XmlDocument();
 
             _filepath = xmlFilePath;
@@ -255,11 +259,17 @@ namespace NeuralNetwork.XMLService
 
             string costFunc = GetXmlValue("NeuralNetwork/Settings/Strategy/CostFunction");
 
+            string regularizationEnum = GetXmlValue("NeuralNetwork/Settings/Strategy/RegularizationType"); 
+
+            string regularizationStrategyFactory = GetXmlValue("NeuralNetwork/Settings/Strategy/RegularizationStrategyFactory");  
+
             var hiddenFunctionType = Type.GetType(hiddenFunction + ",NeuralNetwork.Core");
 
             var outputFunctionType = Type.GetType(outputFunction + ",NeuralNetwork.Core");
 
             var costFunctionType = Type.GetType(costFunc + ",NeuralNetwork.Core");
+
+            var regularizationStrategyFactoryType = Type.GetType(regularizationStrategyFactory + ",NeuralNetwork.Core"); 
 
             IActivationFunction hiddenActivationFunction = Activator.CreateInstance(hiddenFunctionType) as IActivationFunction;
 
@@ -267,24 +277,27 @@ namespace NeuralNetwork.XMLService
 
             ICostFunction costFunction = Activator.CreateInstance(costFunctionType) as ICostFunction;
 
+            RegularizationType regularizationType = (RegularizationType)Enum.Parse(typeof(RegularizationType), regularizationEnum); 
+
+            IRegularizationStrategyFactory regularizationStrategyFact = Activator.CreateInstance(regularizationStrategyFactoryType) as IRegularizationStrategyFactory;  
 
             string optimizationStrategy = GetXmlValue("NeuralNetwork/Settings/Strategy/OptimizationStrategy");
 
             var optStrategy = Type.GetType(optimizationStrategy + ",NeuralNetwork.Core");
 
-            IOptimizationStrategy strategy = Activator.CreateInstance(optStrategy, hiddenActivationFunction, outputActivationFunction, costFunction, layerStructure) as IOptimizationStrategy;
+            IOptimizationStrategy strategy = Activator.CreateInstance(optStrategy, hiddenActivationFunction, outputActivationFunction, costFunction, regularizationType, regularizationStrategyFact ) as IOptimizationStrategy;
 
 
             //Create Network---------------------8::::::::::::::>----------------------------------------
 
 
-            _network = new ArtificialNeuralNetwork(layerStructure, trainingParams, dataset, strategy, initialDistribution);
+            network = new ArtificialNeuralNetwork(layerStructure, trainingParams, dataset, strategy, initialDistribution);
 
 
             //Set Weights---------------------8::::::::::::::>----------------------------------------
 
 
-            _network.Weights.Clear();
+            network.Weights.Clear();
 
             LoadInputWeights();
 
@@ -294,7 +307,7 @@ namespace NeuralNetwork.XMLService
             //Set Biases---------------------8::::::::::::::>----------------------------------------
 
 
-            _network.Biases.Clear();
+            network.Biases.Clear();
 
             LoadHiddenBiases();
 
@@ -306,13 +319,11 @@ namespace NeuralNetwork.XMLService
 
             _xmlDoc = null;
 
-            return _network;
+            return network;
 
         }
         private string GetXmlValue(string xmlPath)
         {
-
-            //_xmlDoc.Load(_filepath);
 
             XmlNode node = _xmlDoc.SelectSingleNode(xmlPath);
 
@@ -324,7 +335,7 @@ namespace NeuralNetwork.XMLService
         {
             var firstLayer = 0;
 
-            var inputWeightMatrix = new double[_network.LayerStructure.numberOfInputNodes, _network.LayerStructure.HiddenLayerList[firstLayer]];
+            var inputWeightMatrix = new double[network.LayerStructure.numberOfInputNodes, network.LayerStructure.HiddenLayerList[firstLayer]];
 
             var transposedInputWeightMatrix = Matrix.Transpose(inputWeightMatrix);
 
@@ -345,20 +356,20 @@ namespace NeuralNetwork.XMLService
                     counter++;
                 }
             }
-            _network.Weights.Add(transposedInputWeightMatrix);
+            network.Weights.Add(transposedInputWeightMatrix);
         }
 
         private void LoadHiddenWeights()
         {
-            var numberOfHiddenLayers = _network.LayerStructure.HiddenLayerList.Count;
+            var numberOfHiddenLayers = network.LayerStructure.HiddenLayerList.Count;
 
             var penultimateHiddenLayer = numberOfHiddenLayers - 1;
 
             for (int i = 0; i < penultimateHiddenLayer; i++)
             {
-                var neuronsInCurrentLayer = _network.LayerStructure.HiddenLayerList[i];
+                var neuronsInCurrentLayer = network.LayerStructure.HiddenLayerList[i];
 
-                var neuronsInNextLayer = _network.LayerStructure.HiddenLayerList[i + 1];
+                var neuronsInNextLayer = network.LayerStructure.HiddenLayerList[i + 1];
 
                 double[,] weightMatrix = new double[neuronsInCurrentLayer, neuronsInNextLayer];
 
@@ -381,13 +392,13 @@ namespace NeuralNetwork.XMLService
                         counter++;
                     }
                 }
-                _network.Weights.Add(transposedWeightMatrix);
+                network.Weights.Add(transposedWeightMatrix);
 
             }
 
             for (int i = numberOfHiddenLayers - 1; i < numberOfHiddenLayers; i++)
             {
-                double[,] weightMatrix = new double[_network.LayerStructure.HiddenLayerList[i], _network.LayerStructure.numberOfOutputNodes];
+                double[,] weightMatrix = new double[network.LayerStructure.HiddenLayerList[i], network.LayerStructure.numberOfOutputNodes];
 
                 var transposedWeightMatrix = Matrix.Transpose(weightMatrix);
 
@@ -408,18 +419,18 @@ namespace NeuralNetwork.XMLService
                         counter++;
                     }
                 }
-                _network.Weights.Add(transposedWeightMatrix);
+                network.Weights.Add(transposedWeightMatrix);
             }
 
         }
 
         private void LoadHiddenBiases()
         {
-            var numberofHiddenLayers = _network.LayerStructure.HiddenLayerList.Count;
+            var numberofHiddenLayers = network.LayerStructure.HiddenLayerList.Count;
 
             for (int i = 0; i < numberofHiddenLayers; i++)
             {
-                var neuronsInCurrentLayer = _network.LayerStructure.HiddenLayerList[i];
+                var neuronsInCurrentLayer = network.LayerStructure.HiddenLayerList[i];
 
                 var biasMatrix = new double[neuronsInCurrentLayer];
 
@@ -433,15 +444,15 @@ namespace NeuralNetwork.XMLService
 
                     counter++;
                 }
-                _network.Biases.Add(biasMatrix);
+                network.Biases.Add(biasMatrix);
             }
         }
 
         private void LoadOutputBiases()
         {
-            int numberOfLayers = _network.LayerStructure.HiddenLayerList.Count + 1;
+            int numberOfLayers = network.LayerStructure.HiddenLayerList.Count + 1;
 
-            int numberOfOutputNeurons = _network.LayerStructure.numberOfOutputNodes;
+            int numberOfOutputNeurons = network.LayerStructure.numberOfOutputNodes;
 
             var outputBiasMatrix = new double[numberOfOutputNeurons];
 
@@ -455,7 +466,7 @@ namespace NeuralNetwork.XMLService
 
                 counter++;
             }
-            _network.Biases.Add(outputBiasMatrix);
+            network.Biases.Add(outputBiasMatrix);
         }
 
     }

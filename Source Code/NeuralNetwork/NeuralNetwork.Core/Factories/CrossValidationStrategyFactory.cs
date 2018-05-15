@@ -16,7 +16,7 @@ namespace NeuralNetwork.Core.Factories
             switch (crossValidationType)
             {
                 case CrossValidationType.KFold:
-                    return new HoldOut();//KFold(network, evaluator);
+                    return new KFold(network, evaluator);
                 case CrossValidationType.HoldOut:
                     return new HoldOut();
                 default:

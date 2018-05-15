@@ -8,3 +8,8 @@ C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetworkCommonCom
 C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetworkCommonComponents\obj\Debug\NeuralNetwork.CommonComponents.csproj.CoreCompileInputs.cache
 C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetworkCommonComponents\obj\Debug\NeuralNetwork.CommonComponents.dll
 C:\Users\kevin\Desktop\NeuralNetwork-master\NeuralNetwork\NeuralNetworkCommonComponents\obj\Debug\NeuralNetwork.CommonComponents.pdb
+C:\Users\Bruker\Desktop\BachelorAssignment\Source Code\NeuralNetwork\NeuralNetworkCommonComponents\bin\Debug\NeuralNetwork.CommonComponents.dll
+C:\Users\Bruker\Desktop\BachelorAssignment\Source Code\NeuralNetwork\NeuralNetworkCommonComponents\bin\Debug\NeuralNetwork.CommonComponents.pdb
+C:\Users\Bruker\Desktop\BachelorAssignment\Source Code\NeuralNetwork\NeuralNetworkCommonComponents\obj\Debug\NeuralNetwork.CommonComponents.csprojResolveAssemblyReference.cache
+C:\Users\Bruker\Desktop\BachelorAssignment\Source Code\NeuralNetwork\NeuralNetworkCommonComponents\obj\Debug\NeuralNetwork.CommonComponents.dll
+C:\Users\Bruker\Desktop\BachelorAssignment\Source Code\NeuralNetwork\NeuralNetworkCommonComponents\obj\Debug\NeuralNetwork.CommonComponents.pdb

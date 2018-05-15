@@ -19,12 +19,12 @@ namespace NeuralNetwork.Core.CrossValidationStrategies
         private double[] _predictions;             
         private List<double[,]> _folds = new List<double[,]>();
 
-        public KFold(INetwork network, INetworkEvaluator evaluator, ISubDataSet trainingSet, ISubDataSet validationSet)
+        public KFold(INetwork network, INetworkEvaluator evaluator)
         {
             _network = network;
             _evaluator = evaluator;
-            _trainingSet = trainingSet;//new TrainingDataSet(_network.DataSet.TrainingSet.DataSet, _network._layerStructure.numberOfInputNodes);
-            _validationSet = validationSet; // new ValidationDataSet(_network.DataSet.TrainingSet.DataSet, _network._layerStructure.numberOfInputNodes);
+            _trainingSet = new TrainingDataSet(network.DataSet.TrainingSet.DataSet, network.LayerStructure.numberOfInputNodes);
+            _validationSet = new ValidationDataSet(network.DataSet.TrainingSet.DataSet, network.LayerStructure.numberOfInputNodes);
 
     }
 

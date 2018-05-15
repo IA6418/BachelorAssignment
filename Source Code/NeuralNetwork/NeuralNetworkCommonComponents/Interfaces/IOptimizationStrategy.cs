@@ -1,4 +1,5 @@
 ﻿using NeuralNetwork.CommonComponents.Structs;
+using NeuralNetwork.CommonComponents.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,5 +33,9 @@ namespace NeuralNetwork.CommonComponents.Interfaces
         IActivationFunction OutputActivationFunction { get; set; }
 
         ICostFunction CostFunction { get; set; }
+
+        IRegularizationStrategyFactory RegularizationStrategyFactory { get; set; }
+
+        RegularizationType RegularizationType { get; set; }
     }
 }

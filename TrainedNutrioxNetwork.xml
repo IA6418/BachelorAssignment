@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NeuralNetwork Date="5/9/2018 1:00:36 PM" Type="BackPropagation" DataFileUsedForTraining="C:\Users\Bruker\Desktop\NutrioxDataset.csv">
+  <Settings>
+    <DistributionType>
+      <InitialRandomDistributionType>NeuralNetwork.Core.InitialRandomDistributionTypes.GaussianDistribution</InitialRandomDistributionType>
+    </DistributionType>
+    <TrainingParameters>
+      <Epochs>500</Epochs>
+      <LearningRate>0.01</LearningRate>
+      <Momentum>0.01</Momentum>
+    </TrainingParameters>
+    <LayerStructure>
+      <NumberOfInputNeurons>2</NumberOfInputNeurons>
+      <NumberOfOutputNeurons>1</NumberOfOutputNeurons>
+      <NumberOfHiddenLayers>2</NumberOfHiddenLayers>
+      <NumberOfNeuronsInHiddenLayer1>5</NumberOfNeuronsInHiddenLayer1>
+      <NumberOfNeuronsInHiddenLayer2>5</NumberOfNeuronsInHiddenLayer2>
+    </LayerStructure>
+    <Strategy>
+      <OptimizationStrategy>NeuralNetwork.Core.OptimizationStrategies.StochasticGradientDescent</OptimizationStrategy>
+      <HiddenLayerActivationFunction>NeuralNetwork.Core.ActivationFunctions.SigmoidFunction</HiddenLayerActivationFunction>
+      <OutputLayerActivationFunction>NeuralNetwork.Core.ActivationFunctions.IdentityFunction</OutputLayerActivationFunction>
+      <CostFunction>NeuralNetwork.Core.CostFunctions.MeanSquaredError</CostFunction>
+      <RegularizationType>None</RegularizationType>
+      <RegularizationStrategyFactory>NeuralNetwork.Core.Factories.RegularizationStrategyFactory</RegularizationStrategyFactory>
+    </Strategy>
+    <Weights>
+      <WeightsForLayer1 LayerNumber="1" NumberOfRows="5" NumberOfColumns="2">
+        <Neuron Weight1="1.44303306291763" Row="1" Column="1" />
+        <Neuron Weight2="0.595336406880172" Row="1" Column="2" />
+        <Neuron Weight3="-1.37211217444383" Row="2" Column="1" />
+        <Neuron Weight4="4.28741838953242" Row="2" Column="2" />
+        <Neuron Weight5="-1.08336554109506" Row="3" Column="1" />
+        <Neuron Weight6="0.274247790848527" Row="3" Column="2" />
+        <Neuron Weight7="-1.21990446920472" Row="4" Column="1" />
+        <Neuron Weight8="-2.17286409991275" Row="4" Column="2" />
+        <Neuron Weight9="2.59590649044925" Row="5" Column="1" />
+        <Neuron Weight10="-0.020858952625991" Row="5" Column="2" />
+      </WeightsForLayer1>
+      <WeightsForLayer2 LayerNumber="2" NumberOfRows="5" NumberOfColumns="5">
+        <Neuron Weight1="-0.457629673212229" Row="1" Column="1" />
+        <Neuron Weight2="-1.34000129566505" Row="1" Column="2" />
+        <Neuron Weight3="0.785778558560253" Row="1" Column="3" />
+        <Neuron Weight4="0.708003978793589" Row="1" Column="4" />
+        <Neuron Weight5="0.474694460945268" Row="1" Column="5" />
+        <Neuron Weight6="-0.964516090039655" Row="2" Column="1" />
+        <Neuron Weight7="-1.37978868236094" Row="2" Column="2" />
+        <Neuron Weight8="-0.543051637478681" Row="2" Column="3" />
+        <Neuron Weight9="0.140509456833486" Row="2" Column="4" />
+        <Neuron Weight10="-0.683586658664972" Row="2" Column="5" />
+        <Neuron Weight11="0.785755245894086" Row="3" Column="1" />
+        <Neuron Weight12="3.55905047752376" Row="3" Column="2" />
+        <Neuron Weight13="-0.617479034306445" Row="3" Column="3" />
+        <Neuron Weight14="-4.29111423618026" Row="3" Column="4" />
+        <Neuron Weight15="0.299670545715362" Row="3" Column="5" />
+        <Neuron Weight16="-0.0586284539427089" Row="4" Column="1" />
+        <Neuron Weight17="1.60390029965271" Row="4" Column="2" />
+        <Neuron Weight18="0.402252156329256" Row="4" Column="3" />
+        <Neuron Weight19="-1.16023661418942" Row="4" Column="4" />
+        <Neuron Weight20="-0.695396630147354" Row="4" Column="5" />
+        <Neuron Weight21="-1.26333875415193" Row="5" Column="1" />
+        <Neuron Weight22="-1.73886629286467" Row="5" Column="2" />
+        <Neuron Weight23="-0.739914749192881" Row="5" Column="3" />
+        <Neuron Weight24="-0.135401756792137" Row="5" Column="4" />
+        <Neuron Weight25="0.841099591745957" Row="5" Column="5" />
+      </WeightsForLayer2>
+      <WeightsForLayer3 LayerNumber="3" NumberOfRows="1" NumberOfColumns="5">
+        <Neuron Weight1="-1.05750251470425" Row="1" Column="1" />
+        <Neuron Weight2="-0.961543952581584" Row="1" Column="2" />
+        <Neuron Weight3="5.71637895016856" Row="1" Column="3" />
+        <Neuron Weight4="1.63024451165756" Row="1" Column="4" />
+        <Neuron Weight5="-1.06432476079703" Row="1" Column="5" />
+      </WeightsForLayer3>
+    </Weights>
+    <Biases>
+      <BiasesForLayer1 LayerNumber="1" NumberOfRows="5">
+        <Neuron Bias1="-1.41316533827216" Row="1" />
+        <Neuron Bias2="0.418278504161403" Row="2" />
+        <Neuron Bias3="0.446751449733985" Row="3" />
+        <Neuron Bias4="3.04809977699484" Row="4" />
+        <Neuron Bias5="0.77120741966025" Row="5" />
+      </BiasesForLayer1>
+      <BiasesForLayer2 LayerNumber="2" NumberOfRows="5">
+        <Neuron Bias1="0.184695010694556" Row="1" />
+        <Neuron Bias2="-0.976839212311196" Row="2" />
+        <Neuron Bias3="-1.13455817262591" Row="3" />
+        <Neuron Bias4="0.380570208463884" Row="4" />
+        <Neuron Bias5="0.443557871179892" Row="5" />
+      </BiasesForLayer2>
+      <BiasesForLayer3 LayerNumber="3" NumberOfRows="1">
+        <Neuron Bias1="-0.839147358030141" Row="1" />
+      </BiasesForLayer3>
+    </Biases>
+  </Settings>
+</NeuralNetwork>

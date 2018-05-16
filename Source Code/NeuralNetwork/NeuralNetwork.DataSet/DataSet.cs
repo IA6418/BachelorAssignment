@@ -46,9 +46,9 @@ namespace NeuralNetwork.DataSet
  
         }
 
-        public void PreProcessDataSet(NormalizationType normalizationType, int numberOfInputs, EncodingType encodingType, int[] columnIndecesToEncode)
+        public void PreProcessDataSet(NormalizationType normalizationType, int numberOfInputs, EncodingType encodingType, int[] columnIndicesToEncode)
         {
-            _dataSet = _dataPreProcessor.PreProcessData(_rawDataSet, normalizationType, numberOfInputs, encodingType, columnIndecesToEncode);
+            _dataSet = _dataPreProcessor.PreProcessData(_rawDataSet, normalizationType, numberOfInputs, encodingType, columnIndicesToEncode);
         }
 
         public void GenerateTrainingAndTestSets()
